@@ -1,19 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de multiplas etapas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1 class="titulo">Formulario de multiplas etapas</h1>
-    <div class="#">
-        <form class="formulario">
-            <h2 class="formulario__titulo">formulario</h2>
-            <h3 class="formulario__subtitulo">escolha seu plano</h3>
-        </form>
+    <!-- <h1 class="titulo">Formulario de multiplas etapas</h1> -->
+    <div class="mainlyBox" id="mainlyBox">
+        <div class="stepsList">
+            <ul class="stepsList_steps">
+                <li class="step">01. Personal Info</li>
+                <li class="step">02. Select your plan</li>
+                <li class="step">03. ADD-ONS</li>
+                <li class="step">04. SUMMARY</li>
+            </ul>
+        </div>
+        <div class="forms">
+            <form class="formulario" id="form01">
+                <div class="form__titles">
+                    <h2 class="formulario__titulo">01. Personal info</h2>
+                    <h3 class="formulario__subtitulo">Plase provide your name, email address and your number</h3>
+                </div>
+                <div class="form__infos" id="step01">
+                    <label type="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="João da Silva">
+                    <label type="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="meuEmail@email.com">
+                    <label type="number">Number</label>
+                    <input type="number" name="phoneNumber" id="phoneNumber" placeholder="(xx) 9 9999 9999">
+                </div>
+                <div class="buttonNextPrevious">
+                    <button class="previous">Previous</button>
+                    <button class="next">Next</button>
+                </div>
+            </form>
+
+            <p class="divisor">#####################</p>
+
+            <form class="formulario" id="form02">
+                <div class="form__titles">
+                    <h2 class="formulario__titulo">02. Select your plan</h2>
+                    <h3 class="formulario__subtitulo">You have the option of monthly on yearly billing</h3>
+                </div>
+                <div class="plans" id="plans">
+                    <div class="plans__cardList">
+                        <div class="cardList__card">
+                            <img src="https://logospng.org/download/google-photos/logo-google-photos-512.png" alt="" class="cardList__image">
+                            <div class="card__textInside">
+                                <p class="card__text">Plan 01</p>
+                                <p class="card__price">R$ 50</p>
+                            </div>
+                        </div>
+                        <div class="cardList__card">
+                            <img src="https://logospng.org/download/google-photos/logo-google-photos-512.png" alt="" class="cardList__image">
+                            <div class="card__textInside">
+                                <p class="card__text">Plan 01</p>
+                                <p class="card__price">R$ 50</p>
+                            </div>
+                        </div>
+                        <div class="cardList__card">
+                            <img src="https://logospng.org/download/google-photos/logo-google-photos-512.png" alt="" class="cardList__image">
+                            <div class="card__textInside">
+                                <p class="card__text">Plan 01</p>
+                                <p class="card__price">R$ 50</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonSlide" id="buttonYearMonth">
+                    <p class="buttonText">Monthly</p>
+                    <button class="buttonSlide__slide">slide Here</button>
+                    <p class="buttonText">Yearly</p>
+                </div>
+                <div class="buttonNextPrevious">
+                    <button class="previous">Previous</button>
+                    <button class="next">Next</button>
+                </div>
+            </form>
+
+            <p class="divisor">#####################</p>
+
+            <form class="formulario" id="form03">
+                <div class="form__titles">
+                    <h2 class="formulario__titulo">03. Pick your add-ons</h2>
+                    <h3 class="formulario__subtitulo">Add-ons help enhance your gaming experience</h3>
+                </div>
+                <div class="add-ons" id="add-ons">
+                    <div class="add-ons__item" id="add-ons__01">
+                        <input type="checkbox" class="add-ons__checkBox">
+                        <div class="add-ons__textAndPrice">
+                            <div class="add-ons__text">
+                                <label class="add-ons__title">Online Service</label>
+                                <span class="add-ons__description">Access to multiplayer games</span>
+                            </div>
+                            <div class="add-ons__price">
+                                <p class="add-ons__price__monthly" id="monthlyPrice">R$ 10/ monthly</p>
+                                <p class="add-ons__price__monthly" id="yearlyPrice">R$ 100/ yearly</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-ons__item" id="add-ons__02">
+                        <input type="checkbox" class="add-ons__checkBox">
+                        <div class="add-ons__textAndPrice">
+                            <div class="add-ons__text">
+                                <label class="add-ons__title">Large Storage</label>
+                                <span class="add-ons__description">Extra 1TB of cloud service</span>
+                            </div>
+                            <div class="add-ons__price">
+                                <p class="add-ons__price__monthly" id="monthlyPrice">R$ 10/ monthly</p>
+                                <p class="add-ons__price__monthly" id="yearlyPrice">R$ 100/ yearly</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-ons__item" id="add-ons__03">
+                        <input type="checkbox" class="add-ons__checkBox">
+                        <div class="add-ons__textAndPrice">
+                            <div class="add-ons__text">
+                                <label class="add-ons__title">Customizable Profile</label>
+                                <span class="add-ons__description">Custom theme on your profile</span>
+                            </div>
+                            <div class="add-ons__price">
+                                <p class="add-ons__price__monthly" id="monthlyPrice">R$ 10/ monthly</p>
+                                <p class="add-ons__price__monthly" id="yearlyPrice">R$ 100/ yearly</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="buttonNextPrevious">
+                    <button class="previous">Previous</button>
+                    <button class="next">Next</button>
+                </div>
+            </form>
+
+            <p class="divisor">#####################</p>
+
+            <form class="formulario" id="form04">
+                <div class="form__titles">
+                    <h2 class="formulario__titulo">04. Finishing Up</h2>
+                    <h3 class="formulario__subtitulo">Double check everything looks OK before confirming</h3>
+                </div>
+                <div class="finalCart" id="finalCart">
+                    <div class="finalCart__item" id="finalCart__01">
+                        <div class="finalCart__text">
+                            <div>
+                                <label class="finalCart__title">Arcade Monthly</label>
+                                <a href="#" class="changePlan">Change Plan</a>
+                            </div>
+                            <div>
+                                <p class="finalCart__itemPrice">R$ 90</p>
+                            </div>
+                        </div>
+                        <div class="finalCart__price">
+                            <p class="finalCart__price__monthly" id="monthlyPrice">R$ 10/ monthly</p>
+                            <p class="finalCart__price__monthly" id="yearlyPrice">R$ 100/ yearly</p>
+                        </div>
+                        <div class="finalCart__totalPrice">
+                            <p class="finalCart__totalPrice__text">"Total per ${period}"</p>
+                            <p class="finalCart__totalPrice__price">`R$ ${totalPrice}`</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonNextPrevious">
+                    <button class="previous">Previous</button>
+                    <button class="next">Confirm</button>
+                </div>
+            </form>
+
+            <p class="divisor">#####################</p>
+
+            <div class="thankYou" id="thankYou">
+                <h2>Thank you!</h2>
+                <p class="thankYou__text">
+                    Thanks for confirming your subscription! We hope you have fun using our platform.
+                    If you ever need support, please feel free to email us at brenno.dinaroski@gmail.com
+                </p>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,254 @@
+/*ROOT RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS */
+
+:root {
+    --cor-background-01:#eff6ff;
+    --cor-background-02:#ffffff;
+    --cor-background-03:#483eff;
+    --cor-background-04:#022959;
+
+    --cor-border-01:#a0a0a1; 
+
+    --font--01:#082d57;
+    --font--02:#8d8d8d;
+    --font--03:#8685e9;
+    --font--04:#f5f4ff;
+
+    --fontFamily-01: 'Ubuntu', sans-serif;
+
+    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    padding: 0;
+    margin: auto;
+    align-content: center;
+    background-color: var(--cor-background-01);
+    justify-content: center;
+    font-family: var(--fontFamily-01);
+    font-weight: 400;
+    font-size: 16px; 
+    color: var(--font--01)  ;
+    
+}
+
+.mainlyBox{
+    display: flex;    
+    justify-content: center;
+    margin: auto;
+    max-height: 100vh;
+    max-width: 70vw;
+    border-radius: 1em;  
+    padding: 2em;  
+}
+
+.borderBox {
+    display: flex;
+    border-radius: 1em;    
+}
+
+.stepsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    background-color: var(--cor-background-03);
+    color: var(--font--04);
+    min-width: 25%;
+}
+
+.stepsList_steps {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    gap: 1em;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.forms { 
+    min-width: 100%;
+}
+
+.formulario {   
+    display: flex; 
+    flex-direction: column;
+    background-color: var(--cor-background-02);    
+    max-height: 50vh;
+    max-width: 100%;
+    /* min-height: 25vh;
+    min-width: 50%; */
+    align-content: space-between;
+    gap: 1em;
+    padding: 1em 2em;
+}
+
+#form01 {
+    
+}
+
+.form__titles {
+    padding: 0em 0em;    
+}
+
+.formulario__titulo {
+    font-size:2em;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+.formulario__subtitulo {
+    color: var(--font--02);
+}
+
+.form__infos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+}
+
+.buttonNextPrevious {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.next, .previous {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--font--04);
+    background-color: var(--cor-background-04);
+    border-radius: 0.3em ;
+    min-width: 5em;
+
+}
+
+/* STEP02 */
+
+.plans__cardList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    padding: 2em 0;   
+}
+
+.cardList__card{
+    border: 1px solid var(--cor-border-01);
+    border-radius: 0.75em;
+    padding: 1em 3em 1em 1em;
+
+}
+
+.cardList__image {
+    height: 3em;
+}
+
+.card__textInside {
+    padding: 5em 2em 0 0;
+    gap: 0.5em;
+}
+
+.card__text {
+    font-weight: 700;
+    font-size: 1.2em;    
+}
+
+.card__price {
+    color: var(--font--02)
+}
+
+.buttonSlide {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+#buttonYearMonth {
+    background-color: var(--cor-background-01);
+    border-radius: 1em;
+    font-weight: 500;
+}
+
+/* STEP 03 */
+
+.add-ons {
+    box-sizing: border-box;
+}
+
+.add-ons__item {
+    display: flex;    
+    box-sizing: border-box;    
+    padding: 0.5em 2em 0.5em 0.5em;
+    border: 1px solid var(--cor-border-01);
+    border-radius: 1em;
+    margin: 1em;
+}
+
+.add-ons__textAndPrice{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;    
+    min-width: 100%;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.add-ons__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-ons__description {
+    margin-top: 0.5em;
+    color: var(--font--02);
+}
