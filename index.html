@@ -17,10 +17,30 @@
     <div class="mainlyBox" id="mainlyBox">
         <div class="stepsList">
             <ul class="stepsList_steps">
-                <li class="step">01. Personal Info</li>
-                <li class="step">02. Select your plan</li>
-                <li class="step">03. ADD-ONS</li>
-                <li class="step">04. SUMMARY</li>
+                <li class="step">
+                    <p class="stepList__circle">1</p>                    
+                    <p class="stepList__info__p">Step 1<br>
+                        <span class="stepList__info__span">Your Info</span>
+                    </p>
+                </li>
+                <li class="step">
+                    <p class="stepList__circle">2</p>                    
+                    <p class="stepList__info__p">Step 2<br>
+                        <span class="stepList__info__span">Your Plan</span>
+                    </p>
+                </li>
+                <li class="step">
+                    <p class="stepList__circle">3</p>                    
+                    <p class="stepList__info__p">Step 3<br>
+                        <span class="stepList__info__span">ADD-ONS</span>
+                    </p>
+                </li>
+                <li class="step">
+                    <p class="stepList__circle">4</p>                    
+                    <p class="stepList__info__p">Step 4<br>
+                        <span class="stepList__info__span">SUMMARY</span>
+                    </p>
+                </li>                
             </ul>
         </div>
         <div class="forms">
@@ -30,24 +50,24 @@
                     <h3 class="formulario__subtitulo">Plase provide your name, email address and your number</h3>
                 </div>
                 <div class="form__infos" id="step01">
-                    <label type="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="João da Silva">
-                    <label type="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="meuEmail@email.com">
-                    <label type="number">Number</label>
-                    <input type="number" name="phoneNumber" id="phoneNumber" placeholder="(xx) 9 9999 9999">
+                    <label type="name" class="form__labelName">Name</label>
+                    <input type="text" name="name" id="name" placeholder="João da Silva" class="form__input">
+                    <label type="email" class="form__labelName">Email</label>
+                    <input type="email" name="email" id="email" placeholder="meuEmail@email.com" class="form__input">
+                    <label type="number" class="form__labelName">Number</label>
+                    <input type="number" name="phoneNumber" id="phoneNumber" placeholder="(xx) 9 9999 9999" class="form__input">
                 </div>
                 <div class="buttonNextPrevious">
                     <button class="previous">Previous</button>
-                    <button class="next">Next</button>
+                    <button class="next" data-next01>Next</button>
                 </div>
             </form>
 
-            <p class="divisor">#####################</p>
+            <p class="divisor some">#####################</p>
 
-            <form class="formulario" id="form02">
-                <div class="form__titles">
-                    <h2 class="formulario__titulo">02. Select your plan</h2>
+            <form class="formulario some" id="form02">
+                <div class="form__titles">                    
+                    <h2 class="formulario__titulo">Select your plan</h2>
                     <h3 class="formulario__subtitulo">You have the option of monthly on yearly billing</h3>
                 </div>
                 <div class="plans" id="plans">
@@ -86,9 +106,9 @@
                 </div>
             </form>
 
-            <p class="divisor">#####################</p>
+            <p class="divisor some">#####################</p>
 
-            <form class="formulario" id="form03">
+            <form class="formulario some" id="form03">
                 <div class="form__titles">
                     <h2 class="formulario__titulo">03. Pick your add-ons</h2>
                     <h3 class="formulario__subtitulo">Add-ons help enhance your gaming experience</h3>
@@ -141,9 +161,9 @@
                 </div>
             </form>
 
-            <p class="divisor">#####################</p>
+            <p class="divisor some">#####################</p>
 
-            <form class="formulario" id="form04">
+            <form class="formulario some" id="form04">
                 <div class="form__titles">
                     <h2 class="formulario__titulo">04. Finishing Up</h2>
                     <h3 class="formulario__subtitulo">Double check everything looks OK before confirming</h3>
@@ -151,7 +171,7 @@
                 <div class="finalCart" id="finalCart">
                     <div class="finalCart__item" id="finalCart__01">
                         <div class="finalCart__text">
-                            <div>
+                            <div class="finalCart__planSelected">
                                 <label class="finalCart__title">Arcade Monthly</label>
                                 <a href="#" class="changePlan">Change Plan</a>
                             </div>
@@ -159,14 +179,10 @@
                                 <p class="finalCart__itemPrice">R$ 90</p>
                             </div>
                         </div>
-                        <div class="finalCart__price">
-                            <p class="finalCart__price__monthly" id="monthlyPrice">R$ 10/ monthly</p>
-                            <p class="finalCart__price__monthly" id="yearlyPrice">R$ 100/ yearly</p>
-                        </div>
                         <div class="finalCart__totalPrice">
-                            <p class="finalCart__totalPrice__text">"Total per ${period}"</p>
-                            <p class="finalCart__totalPrice__price">`R$ ${totalPrice}`</p>
-                        </div>
+                        <p class="finalCart__totalPrice__text">Total per ${period}</p>
+                            <p class="finalCart__totalPrice__price">R$ ${totalPrice}</p>
+                        </div>                        
                     </div>
                 </div>
                 <div class="buttonNextPrevious">
@@ -175,14 +191,23 @@
                 </div>
             </form>
 
-            <p class="divisor">#####################</p>
+            <p class="divisor some">#####################</p>
 
-            <div class="thankYou" id="thankYou">
-                <h2>Thank you!</h2>
-                <p class="thankYou__text">
-                    Thanks for confirming your subscription! We hope you have fun using our platform.
-                    If you ever need support, please feel free to email us at brenno.dinaroski@gmail.com
-                </p>
+            <div class="some">
+                <div class="formulario thankYou" id="thankYou">
+                    <div class="thankYou__img">
+                        <img src="images/correctIcon02.png">
+                    </div>
+                    <div class="thankYou__title">
+                        <h2 class="thankYou__title">Thank you!</h2>
+                    </div>
+                    <div class="thankYou__text">
+                        <p class="">
+                            Thanks for confirming your subscription! We hope you have fun using our platform.
+                            If you ever need support, please feel free to email us at brenno.dinaroski@gmail.com
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
