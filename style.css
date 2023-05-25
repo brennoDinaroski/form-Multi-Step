@@ -162,6 +162,10 @@ body {
     display: none;
 }
 
+.aparece {
+    display: flex;
+}
+
 [data-some] {
     display: none;
 }
