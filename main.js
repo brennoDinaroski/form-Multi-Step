@@ -1,8 +1,6 @@
 // const buttonNext01 = document.querySelector("[data-next01]")
 const buttonsNext = document.querySelectorAll('.buttonNext')
 const buttonsPrevious = document.querySelectorAll('.buttonPrevious')
-const form01 = document.getElementById("form01")
-const form02 = document.getElementById("form02")
 
 let contadorDeStep = 1;
 let formProxima = null;
@@ -23,6 +21,7 @@ function clicarBotaoNext(event) {
     formProxima = `form0${contadorDeStep+1}`
 
     console.log(
+        'form anterior: ', formAnterior,
         'form atual: ', formAtual,
         'form proxima: ', formProxima,
         'contador de step', contadorDeStep,
@@ -31,6 +30,34 @@ function clicarBotaoNext(event) {
     colocaApareceNoForm(formAtual);   
     limparClasseApareceNoForm(formAnterior);       
 };
+
+buttonsPrevious.forEach ( button => {
+    button.addEventListener('click', clicarBotaoPrevious);
+});
+
+function clicarBotaoPrevious (event) {
+    event.preventDefault();   
+    
+    formAnterior = `form0${contadorDeStep-1}`   
+    formAtual = `form0${contadorDeStep}`
+    formProxima = `form0${contadorDeStep+1}`
+    
+    contadorDeStep--       
+
+    colocaApareceNoForm(formAnterior);
+    limparClasseApareceNoForm(formAtual);
+}
+
+//MONTAR FUNÇÃO PARA ARRUMAR TODOS OS FORMS
+//E SÓ CHAMA-LA NAS FUNÇÕES DE CLICK DOS BOTOES NEXT E PREVIOUS
+/*function atualizaNumeracaoDosForms(contadorDeStep) {
+    formAnterior = `form0${contadorDeStep-1}`   
+    formAtual = `form0${contadorDeStep}`
+    formProxima = `form0${contadorDeStep+1}`
+
+    return (formAnterior, formAtual, formProxima);
+}*/
+
 
 function armazenaContadorDeStep(contadorDeStep) {
     const contadorDeStepArmazenado = contadorDeStep;
@@ -47,32 +74,3 @@ function limparClasseApareceNoForm(formAnterior) {
     console.log('limparClasseAparece na ', formAnteriorConst);
     formAnteriorConst.classList.remove("aparece");
 }
-
-buttonsPrevious.forEach(button => {
-    button.addEventListener('click', clicarBotaoPrevious);
-});
-
-function clicarBotaoPrevious (event) {
-    event.preventDefault();
-    console.log('cliquei Previous');
-    
-    colocaApareceNoForm(formAtual);    
-    
-    contadorDeStep = contadorDeStep -1    
-    formAtual = `form0${contadorDeStep}`  
-    
-    contadorDeStep--;  
-    console.log('contador de Step é: ', contadorDeStep); 
-    
-    formProxima = `form0${contadorDeStep}`
-    console.log('formProxima é: ', formProxima);
-
-
-    console.log('form proxima ANTERIOR: ', formProxima);
-    limparClasseApareceNoForm(formProxima);
-    console.log('form proxima POSTERIOR: ', formProxima);
-}
-
-
-
-
