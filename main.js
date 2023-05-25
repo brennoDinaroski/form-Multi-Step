@@ -5,6 +5,7 @@ const buttonsPrevious = document.querySelectorAll('.buttonPrevious')
 let contadorDeStep = 1;
 let formProxima = null;
 let formAtual = null;
+let formsArray = []
 
 buttonsNext.forEach(button => {
     button.addEventListener('click', clicarBotaoNext);
@@ -37,10 +38,14 @@ buttonsPrevious.forEach ( button => {
 
 function clicarBotaoPrevious (event) {
     event.preventDefault();   
+
+    atualizaNumeracaoDosForms(contadorDeStep)
     
+    /*
     formAnterior = `form0${contadorDeStep-1}`   
     formAtual = `form0${contadorDeStep}`
     formProxima = `form0${contadorDeStep+1}`
+    */
     
     contadorDeStep--       
 
@@ -50,13 +55,19 @@ function clicarBotaoPrevious (event) {
 
 //MONTAR FUNÇÃO PARA ARRUMAR TODOS OS FORMS
 //E SÓ CHAMA-LA NAS FUNÇÕES DE CLICK DOS BOTOES NEXT E PREVIOUS
-/*function atualizaNumeracaoDosForms(contadorDeStep) {
+function atualizaNumeracaoDosForms(contadorDeStep) {
     formAnterior = `form0${contadorDeStep-1}`   
     formAtual = `form0${contadorDeStep}`
     formProxima = `form0${contadorDeStep+1}`
 
-    return (formAnterior, formAtual, formProxima);
-}*/
+    formsArray = [
+        formAnterior, 
+        formAtual,
+        formProxima    
+    ]
+
+    return formsArray;
+}
 
 
 function armazenaContadorDeStep(contadorDeStep) {

@@ -46,17 +46,18 @@ table {
 /* CSS */
 
 :root {
-    --cor-background-01:#eff6ff;
+    --cor-background-01:hsl(217, 100%, 97%);
     --cor-background-02:#ffffff;
-    --cor-background-03:#483eff;
-    --cor-background-04:#022959;
+    --cor-background-03:hsl(213, 96%, 18%);
+    --cor-background-04: hsl(213, 96%, 18%);
 
     --cor-border-01:#a0a0a1; 
 
-    --font--01:#082d57;
-    --font--02:#8d8d8d;
-    --font--03:#8685e9;
-    --font--04:#f5f4ff;
+    --font--01:hsl(213, 96%, 18%);
+    --font--02:hsl(213, 96%, 18%);
+    --font--03:hsl(213, 96%, 18%);
+    --font--04:hsl(217, 100%, 97%);
+    --font--05:hsl(47.08deg 87.42% 54.23%);
 
     --fontFamily-01: 'Ubuntu', sans-serif;
 
@@ -86,7 +87,7 @@ body {
     max-height: 100vh;        
     max-width: 50vw;
     width: 60vw;
-    border-radius: 1em;  
+     
     padding: 2em;  
 }
 
@@ -108,13 +109,14 @@ body {
     background-color: var(--cor-background-03);
     color: var(--font--04);
     min-width: 15vw;
-    max-width: 15.1vw;   
+    max-width: 15.1vw;  
+    border-radius: 1em 0 0 1em; 
 }
 
 .stepsList_steps {
     display: flex;
     flex-direction: column;
-    padding: 1.5em;
+    margin: 3em auto auto 3em;
     gap: 1em;
     font-weight: 500;
     font-size: 1em;
@@ -126,6 +128,7 @@ body {
     align-content: center;
     margin: auto 0;
     max-width: 5vw;
+    font-size: 1.8em;
 }
 
 .stepList__info__p{
@@ -134,7 +137,7 @@ body {
     gap: 1em;
     align-content: start;
     justify-content: space-between;
-    color: var(--font--02);
+    color: var(--font--05);
 }
 
 .stepList__info__span {
@@ -149,14 +152,16 @@ body {
     display: flex; 
     flex-direction: column;
     background-color: var(--cor-background-02);    
-    min-height: 60vh;
-    max-height: 61vh;    
+    min-height: 54.999vh;
+    max-height: 55vh;    
     max-width: 100%;    
     min-width: 50%;    
     align-content: space-between;
     gap: 1em;
-    padding: 1em 2em;
+    padding: 3em;
+    border-radius: 0 1em 1em 0;
 }
+
 
 .some{
     display: none;
@@ -219,6 +224,7 @@ body {
     background-color: var(--cor-background-04);
     border-radius: 0.3em ;
     min-width: 5em;
+    border: 1px solid var(--cor-background-03)
 
 }
 
@@ -234,22 +240,25 @@ body {
 .cardList__card{
     border: 1px solid var(--cor-border-01);
     border-radius: 0.75em;
+    box-sizing: border-box;
+    width: 30%;
     padding: 1em 3em 1em 1em;
 
 }
 
 .cardList__image {
-    height: 3em;
+    height: 5em;
 }
 
 .card__textInside {
     padding: 5em 2em 0 0;
-    gap: 0.5em;
+    gap: 1em;
 }
 
 .card__text {
     font-weight: 700;
     font-size: 1.2em;    
+    padding-bottom: 1em;
 }
 
 .card__price {
@@ -285,6 +294,14 @@ body {
     margin: 1em;
 }
 
+.add-ons__title {
+    font-weight: 500;
+}
+
+.add-ons__price__monthly{
+    font-weight: 500;
+}
+
 .add-ons__textAndPrice{
     display: flex;
     flex-direction: row;
@@ -292,6 +309,7 @@ body {
     min-width: 100%;
     justify-content: space-between;
     padding: 1em;
+    align-items: center;
 }
 
 .add-ons__text {
