@@ -1,4 +1,5 @@
-// const buttonNext01 = document.querySelector("[data-next01]")
+// import { trocaDeImagem } from "./js/stepListImages";
+
 const nameField = document.getElementById("name")
 const emailField = document.getElementById("email")
 const phoneNumberField = document.getElementById("phoneNumber")
@@ -16,7 +17,7 @@ buttonsNext.forEach(button => {
 });
 
 function clicarBotaoNext(event) {
-    event.preventDefault(); 
+    event.preventDefault();     
     
     //check form validity (all fields are filled)  
 
@@ -30,6 +31,8 @@ function clicarBotaoNext(event) {
         formAnterior = `form0${contadorDeStep-1}`   
         formAtual = `form0${contadorDeStep}`
         formProxima = `form0${contadorDeStep+1}`
+
+        trocaDeImagem(formAtual);
 
         console.log('email filled');
         
@@ -64,7 +67,9 @@ function clicarBotaoPrevious (event) {
 
     formAnterior = `form0${contadorDeStep-1}`   
     formAtual = `form0${contadorDeStep}`
-    formProxima = `form0${contadorDeStep+1}`    
+    formProxima = `form0${contadorDeStep+1}`  
+    
+    trocaDeImagem(formAtual)  
 }
 
 //MONTAR FUNÇÃO PARA ARRUMAR TODOS OS FORMS
@@ -99,3 +104,6 @@ function limparClasseApareceNoForm(formAnterior) {
     console.log('limparClasseAparece na ', formAnteriorConst);
     formAnteriorConst.classList.remove("aparece");
 }
+
+
+

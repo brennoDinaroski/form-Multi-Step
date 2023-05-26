@@ -116,7 +116,7 @@ body {
 .stepsList_steps {
     display: flex;
     flex-direction: column;
-    margin: 3em auto auto 3em;
+    margin: auto;
     gap: 1em;
     font-weight: 500;
     font-size: 1em;
@@ -144,6 +144,15 @@ body {
     color: var(--font--04);
 }
 
+.checkboxImage {
+    max-height: 2em;
+    max-width: 2em;
+    margin: auto;
+    margin-right: 0;
+    justify-content: center;
+
+}
+
 .forms { 
     min-width: 100%;
 }
@@ -160,6 +169,10 @@ body {
     gap: 1em;
     padding: 3em;
     border-radius: 0 1em 1em 0;
+
+    transform: translateX(200%);
+    opacity: 0;
+    transition: 200ms ease-in-out;
 }
 
 
@@ -169,6 +182,8 @@ body {
 
 .aparece {
     display: flex;
+    transform: translateX(0);
+    opacity: 1;
 }
 
 [data-some] {
@@ -243,7 +258,7 @@ body {
     box-sizing: border-box;
     width: 30%;
     padding: 1em 3em 1em 1em;
-
+    min-height: 20vh;
 }
 
 .cardList__image {
@@ -251,7 +266,7 @@ body {
 }
 
 .card__textInside {
-    padding: 5em 2em 0 0;
+    padding: auto 2em 0 0;
     gap: 1em;
 }
 
@@ -259,6 +274,7 @@ body {
     font-weight: 700;
     font-size: 1.2em;    
     padding-bottom: 1em;
+    margin: 2em 0 0.5em 0;
 }
 
 .card__price {
@@ -401,4 +417,13 @@ body {
     color: var(--font--02);
     font-size: 1.1em;
     max-width: 70%;
+}
+
+.multiStepForm {
+    overflow: hidden;
+}
+
+#form02 {    
+    
+    /* max-height: 70vh;   */
 }
