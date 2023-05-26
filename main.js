@@ -25,7 +25,10 @@ function clicarBotaoNext(event) {
     
     if(!emailField.checkValidity() || !nameField.checkValidity() || !phoneNumber.checkValidity()) {
         console.log('email not filled');
+        nextSemPreencherFormulario ();
     } else {
+        limpaAvisoFormulario01();
+        
         contadorDeStep++;      
 
         formAnterior = `form0${contadorDeStep-1}`   
