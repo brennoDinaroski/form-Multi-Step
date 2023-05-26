@@ -1,10 +1,14 @@
 // const buttonNext01 = document.querySelector("[data-next01]")
+const nameField = document.getElementById("name")
+const emailField = document.getElementById("email")
+const phoneNumberField = document.getElementById("phoneNumber")
 const buttonsNext = document.querySelectorAll('.buttonNext')
 const buttonsPrevious = document.querySelectorAll('.buttonPrevious')
 
 let contadorDeStep = 1;
-let formProxima = null;
-let formAtual = null;
+let formAnterior = 'form00';
+let formAtual = 'form01';
+let formProxima = 'form02';
 let formsArray = []
 
 buttonsNext.forEach(button => {
@@ -13,23 +17,32 @@ buttonsNext.forEach(button => {
 
 function clicarBotaoNext(event) {
     event.preventDefault(); 
-    console.log('Botao next clicado');
     
-    contadorDeStep++;      
+    //check form validity (all fields are filled)  
 
-    formAnterior = `form0${contadorDeStep-1}`   
-    formAtual = `form0${contadorDeStep}`
-    formProxima = `form0${contadorDeStep+1}`
+    console.log('Botao next clicado');       
+    
+    if(!emailField.checkValidity() || !nameField.checkValidity() || !phoneNumber.checkValidity()) {
+        console.log('email not filled');
+    } else {
+        contadorDeStep++;      
 
-    console.log(
-        'form anterior: ', formAnterior,
-        'form atual: ', formAtual,
-        'form proxima: ', formProxima,
-        'contador de step', contadorDeStep,
-    );
+        formAnterior = `form0${contadorDeStep-1}`   
+        formAtual = `form0${contadorDeStep}`
+        formProxima = `form0${contadorDeStep+1}`
 
-    colocaApareceNoForm(formAtual);   
-    limparClasseApareceNoForm(formAnterior);       
+        console.log('email filled');
+        
+        console.log(
+            'form anterior: ', formAnterior,
+            'form atual: ', formAtual,
+            'form proxima: ', formProxima,
+            'contador de step', contadorDeStep,
+            );
+            
+            colocaApareceNoForm(formAtual);   
+            limparClasseApareceNoForm(formAnterior);       
+        } 
 };
 
 buttonsPrevious.forEach ( button => {
@@ -38,24 +51,25 @@ buttonsPrevious.forEach ( button => {
 
 function clicarBotaoPrevious (event) {
     event.preventDefault();   
-
-    atualizaNumeracaoDosForms(contadorDeStep)
+    // atualizaNumeracaoDosForms(contadorDeStep)    
     
-    /*
     formAnterior = `form0${contadorDeStep-1}`   
     formAtual = `form0${contadorDeStep}`
-    formProxima = `form0${contadorDeStep+1}`
-    */
+    formProxima = `form0${contadorDeStep+1}`    
     
-    contadorDeStep--       
-
     colocaApareceNoForm(formAnterior);
     limparClasseApareceNoForm(formAtual);
+    
+    contadorDeStep--
+
+    formAnterior = `form0${contadorDeStep-1}`   
+    formAtual = `form0${contadorDeStep}`
+    formProxima = `form0${contadorDeStep+1}`    
 }
 
 //MONTAR FUNÇÃO PARA ARRUMAR TODOS OS FORMS
 //E SÓ CHAMA-LA NAS FUNÇÕES DE CLICK DOS BOTOES NEXT E PREVIOUS
-function atualizaNumeracaoDosForms(contadorDeStep) {
+/* function atualizaNumeracaoDosForms(contadorDeStep) {
     formAnterior = `form0${contadorDeStep-1}`   
     formAtual = `form0${contadorDeStep}`
     formProxima = `form0${contadorDeStep+1}`
@@ -67,7 +81,7 @@ function atualizaNumeracaoDosForms(contadorDeStep) {
     ]
 
     return formsArray;
-}
+} */
 
 
 function armazenaContadorDeStep(contadorDeStep) {
