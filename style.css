@@ -46,18 +46,20 @@ table {
 /* CSS */
 
 :root {
-    --cor-background-01:hsl(217, 100%, 97%);
+    --cor-background-01:#f0f6ff;
     --cor-background-02:#ffffff;
-    --cor-background-03:hsl(213, 96%, 18%);
-    --cor-background-04: hsl(213, 96%, 18%);
+    --cor-background-03:#02295a;
+    --cor-background-04: #02295a;
+    --cor-background-05: #99c7ff;
+
 
     --cor-border-01:#a0a0a1; 
 
-    --font--01:hsl(213, 96%, 18%);
-    --font--02:hsl(213, 96%, 18%);
-    --font--03:hsl(213, 96%, 18%);
-    --font--04:hsl(217, 100%, 97%);
-    --font--05:hsl(47.08deg 87.42% 54.23%);
+    --font--01:#02295a;
+    --font--02:#02295a;
+    --font--03:#02295a;
+    --font--04:#f0f6ff;
+    --font--05:#f0c424;
 
     --fontFamily-01: 'Ubuntu', sans-serif;
 
@@ -259,6 +261,22 @@ body {
     width: 30%;
     padding: 1em 3em 1em 1em;
     min-height: 20vh;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cardList__card:hover {
+    background-color: var(--cor-background-05);
+    color: var(--font--01);
+    transform: scale(105%);
+    border: 1px solid var(--cor-background-03);
+}
+
+.selected {
+    background-color: var(--cor-background-05);
+    color: var(--font--01);
+    transform: scale(105%);
+    border: 1px solid var(--cor-background-03);
 }
 
 .cardList__image {
